@@ -1,4 +1,4 @@
-<img height=320 src="https://github.com/ferMartz/overchute/blob/main/overchute.png" />
+<img height=320 src="https://github.com/Overchute/overchute/blob/main/overchute.png" />
 
 # Overchute
 
