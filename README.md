@@ -4,6 +4,8 @@
 
 Intellectual Property Protocol
 
+ToDo:
+
 - Allow anyone to create a pseudonymous user account, using Internet Identity or other means.
 
 - Allow users to deposit and withdraw some stable cryptocurrency (probably WTC or XTC).
