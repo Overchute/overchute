@@ -1,8 +1,6 @@
-<img height=320 src="https://github.com/Overchute/overchute/blob/main/overchute.png" />
+<img height=320 src="https://github.com/Overchute/overchute/blob/main/logo-full.png" />
 
-# Overchute
-
-Intellectual Property Protocol
+# Intellectual Property Protocol
 
 ToDo:
 
