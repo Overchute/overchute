@@ -8,10 +8,11 @@ ToDo:
 
 - Allow users to deposit and withdraw some stable cryptocurrency (probably WTC or XTC).
 
-- Allow users to create an offer:
-- Generate a unique ID for the offer, with a unique URL for direct navigation to the offer. The offer status starts as 'draft'.
-- Allow the creator to specify the offer price and the crowdsale duration.
-- Allow the creator to trigger the start of the crowdsale, changing offer status to 'open'.
+  - Allow users to create an offer:
+  - Generate a unique ID for the offer, with a unique URL for direct navigation to the offer. The offer status starts as 'draft'.
+  - Allow the creator to specify the offer price and the crowdsale duration.
+  - Allow the creator to trigger the start of the crowdsale, changing offer status to 'open'.
+
 - Allow the creator to decrease the offer price at any time while the offer is open.
 - Allow users to contribute to a specific open offer:
 - Make a contribution of a desired amount. (For the MVP this can be a simple pledge, not a matching pledge.)
