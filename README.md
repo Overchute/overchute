@@ -1,33 +1,38 @@
 <img height=320 src="https://github.com/Overchute/overchute/blob/main/logo-full.png" />
 
-# Intellectual Property Protocol
+# Crowdsale Protocol  - MVP user flows
 
-ToDo:
+- Creator produces a work of intellectual property (IP) and drafts an open licence for its release.
+- Creator navigates to Overchute website and clicks the"Create new crowdsale" button.
+- In input form, Creator enters:
+    - Offer price (in cycles token XTC) (must be >=0)
+    - End date (must be in the future)
+    - XTC wallet address into which raised funds must be paid
+    - Reads a description of the crowdsale rules and clicks "Confirm" button
+- Overchute creates a crowdsale with the status "open', and generates a unique URL, displaying it for Creator to copy.
+- Creator copies the crowdsale offer URL, and pastes it into a suspensive condition in the open licence, and publishes the open licence.
+- Creator communicates the crowdsale to the community, pointing them to the IP product, the published open licence and the URL where they can contribute.
+- Contributor navigates to crowdsale URL. The app displays:
+    - Offer status (open/failed/fulfilled)
+    - End date
+    - Crowdsale rules
+    - XTC wallet address for contributions, for Contributor to copy.
+- Contributor sets up an XTC wallet and makes a payment to the copied crowdsale wallet address.
+- On the crowdsale end date, Overchute calculates total contributions, and does the following:
+    - If total contributions are less than the offer price:
+        - Set crowdsale status to "failed".
+        - Refund all contributions to the wallet addresses from which they came.
+    - If total contributions are greater than or equal to the offer price:
+        - Set crowdsale status to "fulfilled".
+        - Pay offer price to the wallet address specified by the Creator.
+        - Calculate the Platform's share of the overshoot, and pay it to the platform's wallet address.
+        - Calculate the Creator's share of the overshoot and pay it to the wallet address specified by the Creator.
+        - Calculate the total Contributors' share of the overshoot, and the portion due to each Contributor, and pay each to the wallet address from which the contribution came.
+- IP User sees the open licence for the IP product and wants to know if the suspensive condition has been fulfilled.
+- IP User navigates to the crowdsale URL in the open licence. The app displays the end date and crowdsale status (open/failed/fulfilled).
 
-- Allow anyone to create a pseudonymous user account, using Internet Identity or other means.
-- Allow users to deposit and withdraw some stable cryptocurrency (probably WTC or XTC).
-- Allow users to create an offer:
-  - Generate a unique ID for the offer, with a unique URL for direct navigation to the offer. The offer status starts as 'draft'.
-  - Allow the creator to specify the offer price and the crowdsale duration.
-  - Allow the creator to trigger the start of the crowdsale, changing offer status to 'open'.
-  - Allow the creator to decrease the offer price at any time while the offer is open.
-- Allow users to contribute to a specific open offer:
-  - Make a contribution of a desired amount. (For the MVP this can be a simple pledge, not a matching pledge.)
-  - Increase the contribution at any time while the offer is open.
-  - Note: Contributions must be held in such a way that they cannot be linked to a specific offer by inspecting the blockchain ledger (until the offer is fulfilled).
-- Execute the rules of the mechanism :
-  - When the crowdsale duration is completed
-    - Calculate the total contribution and the overshoot.
-    - If overshoot is less than zero:
-      - Change the status of the offer to 'failed'.
-      - Transfer each contribution back to its contributor.
-    - If overshoot is greater than or equal to zero:
-      - Change the status of the offer to 'fulfilled'.
-      - Transfer the offer price to the creator.
-      - Calculate the platform fee and transfer it to the platform.
-      - Calculate the creator's share of the overshoot and transfer it to the creator.
-      - Calculate the contributors' share of the overshoot, and transfer a portion to each contributor in proportion to their contribution.
-- Allow anyone to search for a specific offer, and inspect:
-  - the status of the offer (draft/open/failed/fulfilled) and the timestamped status changes
-  - for fulfilled offers: the offer price and the total contributed amount (since this can be inferred from ledger transactions anyway once transfers are made)
-- Note: The dApp code must necessarily be open source. Because the offer price and contributions are not disclosed, users must be able to inspect the smart-contract implementing the Double-Blind Crowdsale Protocol to verify that it will function as claimed.
+Notes for MVP design:
+- User accounts or authentication are not required for any participants: Creator, Contributors or IP Users. (Future features will require the creation of a user account for each Creator.)
+- When a Creator creates a crowdsale, it is open for contributions immediately, and cannot be modified.
+- It must not be possible for a Contributor to see what other contributions have been made by looking at other payments to the same wallet address on the public transaction ledger.
+
